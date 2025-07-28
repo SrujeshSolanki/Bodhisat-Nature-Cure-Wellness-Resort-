@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bodhisat Inquiry Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('assets/png2jpg/Slide10.png') center center fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004d40;
+    }
+
+    .form-section {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #00acc1;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00838f;
+    }
+
+    .flex-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .visit-dates {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .date-field {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .inputtext1 {
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      min-width: 150px;
+    }
+
+    .form_text,
+    .to_text {
+      font-weight: 500;
+    }
+
+    .city-country-container {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .inputtext1.inputcity {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .country-select {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .phone-section {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+    }
+
+    .phone-section label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .phone-inputs {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .country-code {
+      width: 80px;
+      padding: 6px;
+    }
+
+    .mobile-number {
+      flex: 1;
+      padding: 6px;
+      min-width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Popup message box -->
+  <div id="popup" style="
+display: none;
+position: fixed;
+top: 20px;
+right: 20px;
+background-color: #4caf50;
+color: white;
+padding: 15px 25px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+z-index: 1000;
+font-size: 16px;">
+    Inquiry sent successfully!
+  </div>
+
+
+  <div class="form-card">
+    <h2><i>INQUIRY</i></h2>
+    <form name="frm" id="Leadform1" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="475f9c82-d772-48c0-ab0d-83aceafedc4f">     <!-- <"3d366f4c-eefc-4c83-a496-881a968baf4c"> **Reception id** -->
+
+      <div class="form-section">
+        <label for="name">Full Name *</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="form-section">
+        <label for="email">Email *</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="phone-section">
+        <label for="mobile_number">Phone <span>*</span></label>
+        <div class="phone-inputs">
+          <select name="country_code" id="country_code" required>
+            <!--<option value="" disabled selected>Code</option>
+            
+            <input type="text" name="city" class="inputtext1 inputcity" placeholder="City" required>
+          <select name="country" class="country-select" required>
+            <option value="">Country</option>
+            <option selected>India</option>-->
+            <option value="">country_code</option>
+            <option selected>+91</option>
+            <!--<option value="+91">+91</option>-->
+            <option value="+258">+258</option>
+            <option value="+351">+351</option>
+            <option value="+44">+44</option>
+            <option value="+1">+1</option>
+            <option value="+61">+61</option>
+            <option value="+81">+81</option>
+            <option value="+971">+971</option>
+            <option value="+49">+49</option>
+            <option value="+33">+33</option>
+          </select>
+          <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required />
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label>Best time to call you</label>
+        <input type="text" name="preferable_call_time" class="inputtext1" maxlength="50"
+          placeholder="Best time to call you">
+      </div>
+
+      <div class="form-section">
+        <label>City and Country *</label>
+        <div class="city-country-container">
+          <input type="text" name="city" class="inputtext1 inputcity" placeholder="City" required>
+          <select name="country" class="country-select" required>
+            <option value="">Country</option>
+            <option selected>India</option>
+            <option>Mozambique</option>
+            <option>Portugal</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>American Samoa</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Anguilla</option>
+            <option>Antigua and Barbuda</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Aruba</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Azerbaijan</option>
+            <option>The Bahamas</option>
+            <option>Bahrain</option>
+            <option>Bangladesh</option>
+            <option>Barbados</option>
+            <option>Belarus</option>
+            <option>Belgium</option>
+            <option>Belize</option>
+            <option>Benin</option>
+            <option>Bermuda</option>
+            <option>Bhutan</option>
+            <option>Bolivia</option>
+            <option>Bosnia and Herzegovina</option>
+            <option>Botswana</option>
+            <option>Brazil</option>
+            <option>Brunei</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso</option>
+            <option>Burundi</option>
+            <option>Cambodia</option>
+            <option>Cameroon</option>
+            <option>Canada</option>
+            <option>Cape Verde</option>
+            <option>Cayman Islands</option>
+            <option>Central African Republic</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>People 's Republic of China</option>
+            <option>Republic of China</option>
+            <option>Christmas Island</option>
+            <option>Cocos(Keeling) Islands</option>
+            <option>Colombia</option>
+            <option>Comoros</option>
+            <option>Congo</option>
+            <option>Cook Islands</option>
+            <option>Costa Rica</option>
+            <option>Cote d'Ivoire</option>
+            <option>Croatia</option>
+            <option>Cuba</option>
+            <option>Cyprus</option>
+            <option>Czech Republic</option>
+            <option>Denmark</option>
+            <option>Djibouti</option>
+            <option>Dominica</option>
+            <option>Dominican Republic</option>
+            <option>Ecuador</option>
+            <option>Egypt</option>
+            <option>El Salvador</option>
+            <option>Equatorial Guinea</option>
+            <option>Eritrea</option>
+            <option>Estonia</option>
+            <option>Ethiopia</option>
+            <option>Falkland Islands</option>
+            <option>Faroe Islands</option>
+            <option>Fiji</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>French Polynesia</option>
+            <option>Gabon</option>
+            <option>The Gambia</option>
+            <option>Georgia</option>
+            <option>Germany</option>
+            <option>Ghana</option>
+            <option>Gibraltar</option>
+            <option>Greece</option>
+            <option>Greenland</option>
+            <option>Grenada</option>
+            <option>Guadeloupe</option>
+            <option>Guam</option>
+            <option>Guatemala</option>
+            <option>Guernsey</option>
+            <option>Guinea</option>
+            <option>Guinea - Bissau</option>
+            <option>Guyana</option>
+            <option>Haiti</option>
+            <option>Honduras</option>
+            <option>Hong Kong</option>
+            <option>Hungary</option>
+            <option>Iceland</option>
+            <option>Indonesia</option>
+            <option>Iran</option>
+            <option>Iraq</option>
+            <option>Ireland</option>
+            <option>Israel</option>
+            <option>Italy</option>
+            <option>Jamaica</option>
+            <option>Japan</option>
+            <option>Jersey</option>
+            <option>Jordan</option>
+            <option>Kazakhstan</option>
+            <option>Kenya</option>
+            <option>Kiribati</option>
+            <option>North Korea</option>
+            <option>South Korea</option>
+            <option>Kosovo</option>
+            <option>Kuwait</option>
+            <option>Kyrgyzstan</option>
+            <option>Laos</option>
+            <option>Latvia</option>
+            <option>Lebanon</option>
+            <option>Lesotho</option>
+            <option>Liberia</option>
+            <option>Libya</option>
+            <option>Liechtenstein</option>
+            <option>Lithuania</option>
+            <option>Luxembourg</option>
+            <option>Macau</option>
+            <option>Macedonia</option>
+            <option>Madagascar</option>
+            <option>Malawi</option>
+            <option>Malaysia</option>
+            <option>Maldives</option>
+            <option>Mali</option>
+            <option>Malta</option>
+            <option>Marshall Islands</option>
+            <option>Martinique</option>
+            <option>Mauritania</option>
+            <option>Mauritius</option>
+            <option>Mayotte</option>
+            <option>Mexico</option>
+            <option>Micronesia</option>
+            <option>Moldova</option>
+            <option>Monaco</option>
+            <option>Mongolia</option>
+            <option>Montenegro</option>
+            <option>Montserrat</option>
+            <option>Morocco</option>
+            <option>Myanmar</option>
+            <option>Nagorno - Karabakh</option>
+            <option>Namibia</option>
+            <option>Nauru</option>
+            <option>Nepal</option>
+            <option>Netherlands</option>
+            <option>Netherlands Antilles</option>
+            <option>New Caledonia</option>
+            <option>New Zealand</option>
+            <option>Nicaragua</option>
+            <option>Niger</option>
+            <option>Nigeria</option>
+            <option>Niue</option>
+            <option>Norfolk Island</option>
+            <option>Turkish Republic of Northern Cyprus</option>
+            <option>Northern Mariana</option>
+            <option>Norway</option>
+            <option>Oman</option>
+            <option>Pakistan</option>
+            <option>Palau</option>
+            <option>Palestine</option>
+            <option>Panama</option>
+            <option>Papua New Guinea</option>
+            <option>Paraguay</option>
+            <option>Peru</option>
+            <option>Philippines</option>
+            <option>Pitcairn Islands</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Puerto Rico</option>
+            <option>Qatar</option>
+            <option>Romania</option>
+            <option>Russia</option>
+            <option>Rwanda</option>
+            <option>Saint Barthelemy</option>
+            <option>Saint Helena</option>
+            <option>Saint Kitts and Nevis</option>
+            <option>Saint Lucia</option>
+            <option>Saint Martin</option>
+            <option>Saint Pierre and Miquelon</option>
+            <option>Saint Vincent and the Grenadines</option>
+            <option>Samoa</option>
+            <option>San Marino</option>
+            <option>Sao Tome and Principe</option>
+            <option>Saudi Arabia</option>
+            <option>Senegal</option>
+            <option>Serbia</option>
+            <option>Seychelles</option>
+            <option>Sierra Leone</option>
+            <option>Singapore</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>Solomon Islands</option>
+            <option>Somalia</option>
+            <option>Somaliland</option>
+            <option>South Africa</option>
+            <option>South Ossetia</option>
+            <option>Spain</option>
+            <option>Sri Lanka</option>
+            <option>Sudan</option>
+            <option>Suriname</option>
+            <option>Svalbard</option>
+            <option>Swaziland</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Syria</option>
+            <option>Taiwan</option>
+            <option>Tajikistan</option>
+            <option>Tanzania</option>
+            <option>Thailand</option>
+            <option>Timor - Leste</option>
+            <option>Togo</option>
+            <option>Tokelau</option>
+            <option>Tonga</option>
+            <option>Transnistria Pridnestrovie</option>
+            <option>Trinidad and Tobago</option>
+            <option>Tristan da Cunha</option>
+            <option>Tunisia</option>
+            <option>Turkey</option>
+            <option>Turkmenistan</option>
+            <option>Turks and Caicos Islands</option>
+            <option>Tuvalu</option>
+            <option>Uganda</option>
+            <option>Ukraine</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Uruguay</option>
+            <option>Uzbekistan</option>
+            <option>Vanuatu</option>
+            <option>Vatican City</option>
+            <option>Venezuela</option>
+            <option>Vietnam</option>
+            <option>British Virgin Islands</option>
+            <option>Isle of Man</option>
+            <option>US Virgin Islands</option>
+            <option>Wallis and Futuna</option>
+            <option>Western Sahara</option>
+            <option>Yemen</option>
+            <option>Zambia</option>
+            <option>Zimbabwe</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label>Purpose of your visit: *</label>
+        <select id="type1" name="visit_purpose" required>
+          <option value="">--Select--</option>
+          <option value="Experiential/Relaxation (Minimum 3 days)">Weekend Experiential/Relaxation (Minimum 3 days)
+          </option>
+          <option value="Detoxification ( 7 days )">Detoxification (Minimum 7 days)</option>
+          <option value="Diabetes Management ( 7 to 14 days )">Diabetes Management (Minimum 7 – 14 days)</option>
+          <option value="Weight Management ( 14 to 21 days )">Weight Management (Minimum 14 - 21 days)</option>
+          <option value="Pain Managament ( 7 to 14 days )">Pain Managament (Minimum 7 - 14 days)</option>
+          <option value="Stress Management ( 7 to 14 days )">Stress Management (Minimum 7 – 14 days)</option>
+          <option value="treatment of pre-existing condition/ailment ( 14 to 28 days )">Treatment of Pre-medical
+            Condition/Ailment (Minimum 14 - 28 days)</option>
+          <option value="other reason">Other reason</option>
+        </select>
+      </div>
+
+      <div class="form-section hidden" id="treatmentbox">
+        <label>Please describe your condition/ailment:</label>
+        <textarea rows="4" name="treatment" class="inputtext1" placeholder="Please describe"></textarea>
+      </div>
+
+      <div class="form-section hidden" id="otherreasonbox">
+        <label>Please specify your reason:</label>
+        <textarea rows="3" name="other_reason" class="inputtext1" placeholder="Please specify"></textarea>
+      </div>
+
+      <div class="form-section">
+        <label>When do you plan to visit? *</label>
+        <div class="visit-dates">
+          <div class="date-field">
+            <span class="form_text">From:</span>
+            <input class="inputtext1a" name="arrival_date" type="date" required />
+          </div>
+          <div class="date-field">
+            <span class="to_text">To:</span>
+            <input class="inputtext1" name="return_date" type="date" required />
+          </div>
+        </div>
+      </div>
+
+      <div class="form_input hear_input" style="margin-bottom:0;">
+        <label>How did you hear about <strong>Bodhisat</strong>?<span>*</span></label>
+        <select id="type" name="hear_about">
+          <option value="">--Select--</option>
+          <option value="Friends and family">Friends and family</option>
+          <option value="guest">Bodhisat guest referral</option>
+          <option value="Internet search">Internet search</option>
+          <option value="Google ads">Google ads</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="SMS">SMS</option>
+          <option value="Email">Email</option>
+          <option value="Press/Media">Press/Media</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+
+      <div class="form-section">
+        <button type="submit">Submit</button>
+      </div>
+
+    </form>
+
+    <div id="thank-you" style="display: none; text-align: center;">
+      <h2>Thank you for your Inquiry</h2>
+      <p>We have received your message and will get back to you shortly.</p>
+      <a href="Bodhisatwellnessresort.html" style="
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00acc1;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  ">Back to Home</a>
+    </div>
+
+  </div>
+
+
+  <script>
+    // DOM references
+    const purposeSelect = document.getElementById("type1");
+    const treatmentBox = document.getElementById("treatmentbox");
+    const otherReasonBox = document.getElementById("otherreasonbox");
+    const form = document.getElementById("Leadform1");
+    const thankYouSection = document.getElementById("thank-you");
+
+    // Show/hide condition fields based on purpose
+    purposeSelect.addEventListener("change", function () {
+      const value = this.value;
+      treatmentBox.classList.toggle("hidden", value !== "treatment");
+      otherReasonBox.classList.toggle("hidden", value !== "other" && value !== "other reason");
+    });
+
+    // Handle form submission via Web3Forms
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default form submission
+      const formData = new FormData(form);
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+          if (response.ok) {
+            form.style.display = "none"; // Hide the form
+            thankYouSection.style.display = "block"; // Show thank you section
+            form.reset(); // Optional: reset form fields
+            treatmentBox.classList.add("hidden");
+            otherReasonBox.classList.add("hidden");
+          } else {
+            return response.json().then((data) => {
+              alert(data.message || "Something went wrong. Please try again.");
+            });
+          }
+        })
+        .catch((error) => {
+          alert("Something went wrong. Please try again later.");
+          console.error("Form submission error:", error);
+        });
+    });
+  </script>
+
+</body>
+
+</html>

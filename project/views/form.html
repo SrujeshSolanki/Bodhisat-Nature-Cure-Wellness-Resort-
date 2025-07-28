@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inquiry Form</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Bodhisat Wellness Resort Inquiry</h1>
+    <form action="/submit" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="tel" name="phone" placeholder="Your Phone" required />
+      <input type="number" name="adults" placeholder="No. of Adults" required />
+      <input type="number" name="kids" placeholder="No. of Kids" />
+      <select name="roomType" required>
+        <option value="">Select Room Type</option>
+        <option value="Standard">Standard</option>
+        <option value="Deluxe">Deluxe</option>
+      </select>
+      <input type="date" name="fromDate" required />
+      <input type="date" name="toDate" required />
+      <select name="wellnessProgram" id="programSelect" required onchange="toggleOther()">
+        <option value="">Choose Program</option>
+        <option value="Weight Loss">Weight Loss</option>
+        <option value="Detox">Detox</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" name="otherProgram" id="otherProgram" placeholder="Please specify" style="display:none;" />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleOther() {
+      const program = document.getElementById('programSelect').value;
+      document.getElementById('otherProgram').style.display = (program === 'Other') ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

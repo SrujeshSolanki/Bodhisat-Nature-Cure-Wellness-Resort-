@@ -1,0 +1,387 @@
+/* Mobile Menu Admin CSS Style*/
+@font-face {
+    font-family: 'mobmenu';
+    src: url('font/mobmenu.woff2?31192480') format('woff2'),
+        url('font/mobmenu.woff?31192480') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="mob-icon-"]:before,
+[class*=" mob-icon-"]:before {
+    font-family: "mobmenu";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased mob-icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+.mob-icon-ok-1:before {
+    content: '\e800';
+}
+
+/* 'î €' */
+.mob-icon-ok:before {
+    content: '\e80f';
+}
+
+/* 'î ' */
+.mob-icon-plus:before {
+    content: '\e810';
+}
+
+/* 'î ' */
+.mob-icon-plus-1:before {
+    content: '\e813';
+}
+
+/* 'î “' */
+.mob-icon-plus-outline:before {
+    content: '\e818';
+}
+
+/* 'î ˜' */
+.mob-icon-plus-2:before {
+    content: '\e819';
+}
+
+/* 'î ™' */
+.mob-icon-align-justify-1:before {
+    content: '\e84f';
+}
+
+/* 'î¡' */
+.mob-icon-instagram:before {
+    content: '\e88e';
+}
+
+/* 'î¢Ž' */
+.mob-icon-linkedin:before {
+    content: '\e88f';
+}
+
+/* 'î¢' */
+.mob-icon-pinterest:before {
+    content: '\e892';
+}
+
+/* 'î¢’' */
+.mob-icon-twitter:before {
+    content: '\e898';
+}
+
+/* 'î¢˜' */
+.mob-icon-tumblr:before {
+    content: '\e899';
+}
+
+/* 'î¢™' */
+.mob-icon-vimeo:before {
+    content: '\e89a';
+}
+
+/* 'î¢š' */
+.mob-icon-star:before {
+    content: '\e8a3';
+}
+
+/* 'î¢£' */
+.mob-icon-user:before {
+    content: '\e8a4';
+}
+
+/* 'î¢¤' */
+.mob-icon-star-1:before {
+    content: '\e8d3';
+}
+
+/* 'î£“' */
+.mob-icon-user-1:before {
+    content: '\e8d4';
+}
+
+/* 'î£”' */
+.mob-icon-left-open:before {
+    content: '\e8f6';
+}
+
+/* 'î£¶' */
+.mob-icon-right-open:before {
+    content: '\e8f7';
+}
+
+/* 'î£·' */
+.mob-icon-down-dir:before {
+    content: '\e8fc';
+}
+
+/* 'î£¼' */
+.mob-icon-right-dir:before {
+    content: '\e8fd';
+}
+
+/* 'î£½' */
+.mob-icon-star-empty:before {
+    content: '\e93d';
+}
+
+/* 'î¤½' */
+.mob-icon-up-dir:before {
+    content: '\e980';
+}
+
+/* 'î¦€' */
+.mob-icon-left-dir:before {
+    content: '\e981';
+}
+
+/* 'î¦' */
+.mob-icon-menu:before {
+    content: '\e9d6';
+}
+
+/* 'î§–' */
+.mob-icon-right-open-2:before {
+    content: '\ea32';
+}
+
+/* 'î¨²' */
+.mob-icon-th:before {
+    content: '\eac3';
+}
+
+/* 'î«ƒ' */
+.mob-icon-th-large:before {
+    content: '\eac5';
+}
+
+/* 'î«…' */
+.mob-icon-th-list:before {
+    content: '\eac7';
+}
+
+/* 'î«‡' */
+.mob-icon-minus:before {
+    content: '\e812';
+}
+
+/* 'î ’' */
+.mob-icon-minus-1:before {
+    content: '\e9d8';
+}
+
+/* 'î§˜' */
+.mob-icon-minus-2:before {
+    content: '\eacb';
+}
+
+/* 'î«‹' */
+.mob-icon-th-list-3:before {
+    content: '\ec71';
+}
+
+/* 'î±±' */
+.mob-icon-cancel:before {
+    content: '\ec73';
+}
+
+/* 'î±³' */
+.mob-icon-cancel-circle:before {
+    content: '\ec74';
+}
+
+/* 'î±´' */
+.mob-icon-cancel-1:before {
+    content: '\ecf2';
+}
+
+/* 'î³²' */
+.mob-icon-cancel-2:before {
+    content: '\edf5';
+}
+
+/* 'î·µ' */
+.mob-icon-cancel-circled-1:before {
+    content: '\edf6';
+}
+
+/* 'î·¶' */
+.mob-icon-cancel-circled2:before {
+    content: '\edf7';
+}
+
+/* 'î··' */
+.mob-icon-up-open-1:before {
+    content: '\ee59';
+}
+
+/* 'î¹™' */
+.mob-icon-cancel-3:before {
+    content: '\ee65';
+}
+
+/* 'î¹¥' */
+.mob-icon-cancel-circled-2:before {
+    content: '\ee66';
+}
+
+/* 'î¹¦' */
+.mob-icon-th-large-1:before {
+    content: '\ee68';
+}
+
+/* 'î¹¨' */
+.mob-icon-th-1:before {
+    content: '\ee69';
+}
+
+/* 'î¹©' */
+.mob-icon-th-list-1:before {
+    content: '\ee6a';
+}
+
+/* 'î¹ª' */
+.mob-icon-up-open-2:before {
+    content: '\ee6b';
+}
+
+/* 'î¹«' */
+.mob-icon-down-open-2:before {
+    content: '\ee6c';
+}
+
+/* 'î¹¬' */
+.mob-icon-cancel-squared:before {
+    content: '\ee6d';
+}
+
+/* 'î¹­' */
+.mob-icon-cancel-4:before {
+    content: '\ee6f';
+}
+
+/* 'î¹¯' */
+.mob-icon-up-open-big:before {
+    content: '\ee70';
+}
+
+/* 'î¹°' */
+.mob-icon-down-open-big:before {
+    content: '\ee71';
+}
+
+/* 'î¹±' */
+.mob-icon-down-open-mini:before {
+    content: '\ee73';
+}
+
+/* 'î¹³' */
+.mob-icon-cancel-circled-outline:before {
+    content: '\ee77';
+}
+
+/* 'î¹·' */
+.mob-icon-cancel-outline:before {
+    content: '\ee79';
+}
+
+/* 'î¹¹' */
+.mob-icon-menu-2:before {
+    content: '\ee7a';
+}
+
+/* 'î¹º' */
+.mob-icon-menu-outline:before {
+    content: '\ee7b';
+}
+
+/* 'î¹»' */
+.mob-icon-cancel-circle-1:before {
+    content: '\ee7c';
+}
+
+/* 'î¹¼' */
+.mob-icon-down-open:before {
+    content: '\f004';
+}
+
+/* 'ï€„' */
+.mob-icon-up-open:before {
+    content: '\f005';
+}
+
+/* 'ï€…' */
+.mob-icon-menu-3:before {
+    content: '\f008';
+}
+
+/* 'ï€ˆ' */
+.mob-icon-th-list-2:before {
+    content: '\f009';
+}
+
+/* 'ï€‰' */
+.mob-icon-th-thumb:before {
+    content: '\f00a';
+}
+
+/* 'ï€Š' */
+.mob-icon-th-thumb-empty:before {
+    content: '\f00b';
+}
+
+/* 'ï€‹' */
+.mob-icon-cancel-circled:before {
+    content: '\f06e';
+}
+
+/* 'ï®' */
+.mob-icon-menu-1:before {
+    content: '\f0c9';
+}
+
+/* 'ïƒ‰' */
+.mob-icon-gplus:before {
+    content: '\f0d5';
+}
+
+/* 'ïƒ•' */
+.mob-icon-ellipsis:before {
+    content: '\f141';
+}
+
+/* 'ï…' */
+.mob-icon-ellipsis-vert:before {
+    content: '\f142';
+}
+
+/* 'ï…‚' */
+.mob-icon-facebook-squared:before {
+    content: '\f308';
+}
+
+/* 'ïŒˆ' */
